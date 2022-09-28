@@ -31,7 +31,7 @@ int main() {
 
 				break;
 			default:
-				if( opcao != 0 ){
+				if( opcao != 0 ) {
 					printf("\nOpção inválida!\n");
 				}	
 		}

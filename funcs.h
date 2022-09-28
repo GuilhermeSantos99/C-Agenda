@@ -3,12 +3,12 @@
 
 #define LIMIT 50
 
-typedef struct{
+typedef struct {
 	char nome[50];
 	int dia, mes, ano;
-}Contato;
+} Contato;
 
-void showMenu(){
+void showMenu() {
 	printf("+------------------------+\n");
 	printf("|       TermGenda        |\n");
 	printf("|------------------------|\n");
@@ -22,7 +22,7 @@ void showMenu(){
 	printf("> ");
 }
 
-void imprimir( Contato **c, int quant ){
+void imprimir( Contato **c, int quant ) {
 	
 	printf("\n\t\tLista de Contatos:\n");
 	printf("\t--------------------------------\n");
@@ -32,9 +32,9 @@ void imprimir( Contato **c, int quant ){
 	printf("\t--------------------------------\n");
 }
 
-int cadastrar_contato( Contato **c, int quant, int tam ){
+int cadastrar_contato( Contato **c, int quant, int tam ) {
 
-	if(quant < tam){
+	if(quant < tam) {
 		
 		Contato *novo = malloc(sizeof(Contato));
 		printf("\nDigite o nome do contato: ");
@@ -45,15 +45,15 @@ int cadastrar_contato( Contato **c, int quant, int tam ){
 		c[quant] = novo;
 		
 		return 1;
-	} else{
+
+	} else {
 		printf("\nNão foi possível realizar novo cadastro");
 		printf("\nVetor cheio!");
 		return 0;
-
 	}
 }
 
-void alterar_contato( Contato **c, int quant ){
+void alterar_contato( Contato **c, int quant ) {
 
 	int id;
 	imprimir(c, quant);
@@ -62,7 +62,7 @@ void alterar_contato( Contato **c, int quant ){
 	getchar();
 	id--;
 
-	if( id >= 0 && id < quant ){
+	if( id >= 0 && id < quant ) {
 		Contato *novo = malloc(sizeof(Contato));
 
 		printf("\nDigite o nome do contato: ");
@@ -72,12 +72,13 @@ void alterar_contato( Contato **c, int quant ){
 		getchar();
 		c[id] = novo;
 
-	}else{
+	} else{
 		printf("\n\tCódigo inválido\n");
 	}
 }
 
-void salvar( Contato **c, int quant, char arq[] ){
+void salvar( Contato **c, int quant, char arq[] ) {
+	
 	FILE *file = fopen(arq, "w");
 	int i;
 	if( file ){
@@ -88,7 +89,7 @@ void salvar( Contato **c, int quant, char arq[] ){
 			fprintf(file, "%d %d %d\n", c[i]->dia, c[i]->mes, c[i]->ano);
 		}
 		fclose(file);
-	}else{
+	}else {
 		printf("\n\tNão possível abrir/criar o arquivo!\n");
 	}
 }
