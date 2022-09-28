@@ -8,6 +8,20 @@ typedef struct{
 	int dia, mes, ano;
 }Contato;
 
+void showMenu(){
+	printf("+------------------------+\n");
+	printf("|       TermGenda        |\n");
+	printf("|------------------------|\n");
+	printf("| 0 - Sair               |\n");
+	printf("| 1 - Cadastrar          |\n");
+	printf("| 2 - Alterar            |\n");
+	printf("| 3 - Imprimir           |\n");
+	printf("| 4 - Salvar             |\n");
+	printf("| 5 - Ler arquivo        |\n");
+	printf("+------------------------+\n");
+	printf("> ");
+}
+
 void imprimir( Contato **c, int quant ){
 	
 	printf("\n\t\tLista de Contatos:\n");
