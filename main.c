@@ -5,6 +5,7 @@
 int main() {
 	
 	Contato *agenda[LIMIT];
+	char arquivo[] = {"agenda.txt"};
 	int tam = LIMIT, quant = 0, opcao;
 
 	do {
@@ -25,7 +26,7 @@ int main() {
 				imprimir(agenda, quant);
 				break;
 			case 4:
-
+				salvar(agenda, quant, arquivo);
 				break;
 			case 5:
 

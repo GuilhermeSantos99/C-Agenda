@@ -1,5 +1,5 @@
 # Name of the project
-PROJ_NAME=TermContatos
+PROJ_NAME=C-Agenda
 
 # .c files
 C_SOURCE=$(wildcard *.c)

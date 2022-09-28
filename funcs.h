@@ -8,7 +8,7 @@ typedef struct{
 	int dia, mes, ano;
 }Contato;
 
-void imprimir(Contato **c, int quant){
+void imprimir( Contato **c, int quant ){
 	
 	printf("\n\t\tLista de Contatos:\n");
 	printf("\t--------------------------------\n");
@@ -18,7 +18,7 @@ void imprimir(Contato **c, int quant){
 	printf("\t--------------------------------\n");
 }
 
-int cadastrar_contato(Contato **c, int quant, int tam){
+int cadastrar_contato( Contato **c, int quant, int tam ){
 
 	if(quant < tam){
 		
@@ -39,7 +39,7 @@ int cadastrar_contato(Contato **c, int quant, int tam){
 	}
 }
 
-void alterar_contato(Contato **c, int quant){
+void alterar_contato( Contato **c, int quant ){
 
 	int id;
 	imprimir(c, quant);
@@ -60,6 +60,22 @@ void alterar_contato(Contato **c, int quant){
 
 	}else{
 		printf("\n\tCódigo inválido\n");
+	}
+}
+
+void salvar( Contato **c, int quant, char arq[] ){
+	FILE *file = fopen(arq, "w");
+	int i;
+	if( file ){
+		fprintf(file, "%d\n", quant);
+		for( i = 0; i < quant; i++ ){
+			fputs(c[i]->nome, file);
+			fputc('\n', file);
+			fprintf(file, "%d %d %d\n", c[i]->dia, c[i]->mes, c[i]->ano);
+		}
+		fclose(file);
+	}else{
+		printf("\n\tNão possível abrir/criar o arquivo!\n");
 	}
 }
 
