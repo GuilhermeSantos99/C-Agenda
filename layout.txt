@@ -1,13 +1,10 @@
-+------------------------+
-|       TermGenda        |
-|------------------------| 
-|                        |
-|                        |
-|                        |
-|                        |
-|                        |
-|                        |
-|                        |
-|                        |
-|                        |
-+------------------------+
+printf("+------------------------+\n");
+printf("|       TermGenda        |\n");
+printf("|------------------------|\n");
+printf("| 0 - Sair               |\n");
+printf("| 1 - Cadastrar          |\n");
+printf("| 2 - Alterar            |\n");
+printf("| 3 - Imprimir           |\n");
+printf("| 4 - Salvar             |\n");
+printf("| 5 - Ler arquivo        |\n");
+printf("+------------------------+\n");

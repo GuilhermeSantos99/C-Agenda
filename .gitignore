@@ -56,3 +56,6 @@ dkms.conf
 
 # Test files
 agenda.txt
+C-Agenda
+main
+layout.txt
