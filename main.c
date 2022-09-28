@@ -9,8 +9,7 @@ int main() {
 	int tam = LIMIT, quant = 0, opcao;
 
 	do {
-		printf("\n\t0 - Sair\n\t1 - Cadastrar\n\t2 - Alterar\n"
-				"\t2 - Alterar\n\t3 - Imprimir\n\t4 - Salvar\n\t5 - Ler arquivo\n");
+		showMenu();
 
 		scanf("%d", &opcao);
 		getchar();
